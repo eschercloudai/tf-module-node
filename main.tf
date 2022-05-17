@@ -28,11 +28,11 @@ resource "openstack_compute_instance_v2" "instance" {
   dynamic "block_device" {
     for_each = var.boot_from_volume ? [{ size = var.volume_size }] : []
     content {
-      uuid = data.openstack_images_image_v2.image.id
-      source_type = "image"
-      volume_size = block_device.value["size"]
-      boot_index = 0
-      destination_type = "volume"
+      uuid                  = data.openstack_images_image_v2.image.id
+      source_type           = "image"
+      volume_size           = block_device.value["size"]
+      boot_index            = 0
+      destination_type      = "volume"
       delete_on_termination = var.delete_on_termination
     }
   }

@@ -69,15 +69,15 @@ variable "tags" {
 
 variable "boot_from_volume" {
   description = "Flag to boot an instance from a volume"
-  default = false
+  default     = false
 }
 
 variable "volume_size" {
   description = "Size of disk (in GB) to create if booting from a volume"
-  default = "100"
+  default     = "100"
 }
 
 variable "delete_on_termination" {
   description = "Whether or not to delete a volume on termination"
-  default = true
+  default     = true
 }
